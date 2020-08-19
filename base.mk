@@ -1187,6 +1187,7 @@ PRODUCT_PACKAGES_DEBUG += \
     init.qcom.debug.sh \
     init.qcom.debug-sdm660.sh \
     init.qcom.debug-sdm710.sh \
+    init.qcom.testscripts.sh \
     init.qti.debug-msmnile-apps.sh \
     init.qti.debug-msmnile-modem.sh \
     init.qti.debug-msmnile-slpi.sh \
