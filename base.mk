@@ -319,6 +319,8 @@ INIT += enable_swap.sh
 INIT += init.mdm.sh
 INIT += fstab.qcom
 INIT += fstab.qti
+INIT += fstab.default
+INIT += fstab.emmc
 INIT += init.qcom.sensors.sh
 INIT += init.qcom.crashdata.sh
 INIT += init.qcom.vendor.rc
@@ -330,9 +332,11 @@ IPROUTE2 := ip
 IPROUTE2 += libiprouteutil
 
 #IPACM
+ifneq ($(TARGET_HAS_LOW_RAM),true)
 IPACM += ipacm
 IPACM += IPACM_cfg.xml
 IPACM += ipacm-diag
+endif
 
 #IPTABLES
 IPTABLES := libiptc
@@ -610,14 +614,6 @@ LIBQDUTILS := libqdutils
 
 #LIBQDMETADATA
 LIBQDMETADATA := libqdMetaData
-
-#LIBPOWER
-ifneq ($(TARGET_USES_NON_LEGACY_POWERHAL), true)
-LIBPOWER := power.qcom
-#LIBPOWER -- Add HIDL Packages
-LIBPOWER += android.hardware.power@1.0-impl
-LIBPOWER += android.hardware.power@1.0-service
-endif
 
 #LLVM for RenderScript
 #use qcom LLVM
