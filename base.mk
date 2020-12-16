@@ -892,12 +892,12 @@ else
             VisualizationWallpapers
 
     DELAUN := Launcher3
-endif
 
-#servicetracker HAL
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2-impl \
-    vendor.qti.hardware.servicetracker@1.2-service
+    #servicetracker HAL
+    PRODUCT_PACKAGES += \
+            vendor.qti.hardware.servicetracker@1.2-impl \
+            vendor.qti.hardware.servicetracker@1.2-service
+endif
 
 PRODUCT_PACKAGES += $(ALSA_HARDWARE)
 PRODUCT_PACKAGES += $(ALSA_UCM)
@@ -1223,9 +1223,6 @@ PRODUCT_PACKAGES += libqti_vndfwk_detect.vendor
 
 # vndservicemanager
 PRODUCT_PACKAGES += vndservicemanager
-
-PRODUCT_PACKAGES += android.hardware.drm@1.3-service.widevine
-PRODUCT_PACKAGES += android.hardware.drm@1.3-service.clearkey
 
 #soong namespace for qssi vs vendor differentiation
 SOONG_CONFIG_NAMESPACES += qssi_vs_vendor
